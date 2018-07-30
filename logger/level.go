@@ -118,7 +118,7 @@ func (f *LevelFilter) Write(p []byte) (int, error) {
 		return len(p), nil
 	}
 
-	line := []byte(time.Now().UTC().Format(time.RFC3339))
+	line := []byte(time.Now().UTC().Format(time.RFC3339Nano))
 	line = append(line, ' ')
 	if !tok {
 		line = append(line, infoThresholdByteSlice...)
